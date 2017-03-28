@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>易鲸捷数据库安装</title>
+<link href="../lib/css/bootstrap.min.css" rel="stylesheet">
+<link href="../css/navbar.css" rel="stylesheet">
+<link href="../lib/css/jquery.dataTables.min.css" rel="stylesheet">
+
+<script src="../lib/js/jquery.min.js"></script>
+<script src="../lib/js/jquery.dataTables.min.js"></script>
+<script src="../lib/js/bootstrap.min.js"></script>
+<script src="../js/ConfigureView.js"></script>
+
+<link href="../lib/images/sort_asc.png" rel="stylesheet">
+<link href="../lib/images/sort_both.png" rel="stylesheet">
+</head>
+
+<body>
+
+	<div class="navbar-wrapper">
+      <div class="container">
+
+        <nav class="navbar navbar-inverse navbar-static-top">
+          <div class="container">
+            <div class="navbar-header">
+              <!-- <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button> -->
+              <a class="navbar-brand" href="#">易鲸捷数据库安装</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#">configure</a></li>
+                <li><a href="#about">配置</a></li>
+                <li><a href="#contact">安装</a></li>
+                <li><a href="#contact">进度</a></li>
+                <li><a href="#contact">日志</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+			<div class="btn-group  pull-right" style="margin-bottom: 20px">
+				<button type="button" class="btn btn-default dropdown-toggle"
+					style="background-color: black; color: white;"
+					data-toggle="dropdown" aria-expanded="true">
+					<span>Action</span> <span class="caret"></span>
+				</button>
+				<ul class="dropdown-menu" role="menu">
+					<li><a href="#" data-toggle="modal" data-target="#myModal">Install</a></li>
+				</ul>
+			</div>
+			<table id="example" class="display" width="100%"></table>
+        
+       <!--  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" style="background-color:black;margin-top:80px" data-target="#myModal">Edit Configure</button> -->
+        
+			<div id="myModal" class="modal fade" role="dialog">
+				<div class="modal-dialog" style="margin-left: 400px;">
+					<!-- Modal content-->
+					<div class="modal-content" style="width:800px">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Confiuration Detail</h4>
+						</div>
+						<div class="modal-body">
+			<form class="form-horizontal">
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">license file</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">traf_user</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">traf_pwd</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">home_dir</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">traf_dirname</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">java_home</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">mgr_url</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">mgr_user</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">mgr_pwd</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">cluster_no</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">traf_package</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">dcs_cnt_per_node</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">scratch_locs</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">traf_start</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">dcs_ha</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">dcs_floating_ip</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">dcs_interface</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">dcs_backup_nodes</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">offline_mode</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_security</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">db_admin_user</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">offline_mode</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">db_admin_pwd</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">db_root_user</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_hosts</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_port</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_identifiers</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_certpath</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_user</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<div class="form-group">
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_pwd</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file ">
+				</div>
+				<label for="exampleInputEmail1" class="col-sm-2 control-label"
+					style="padding-left: 0px;padding-right:0px">ldap_encrypt</label>
+				<div class="col-sm-3">
+					<input type="email" class="form-control" id="exampleInputEmail1"
+						placeholder="license file2 ">
+				</div>
+			</div>
+			<!-- <div class="form-group">
+				<label for="exampleInputFile">traf pwd</label> <input type="file"
+					id="exampleInputFile">
+				<p class="help-block">Example block-level help text here.</p>
+			</div> -->
+			<!-- <div class="checkbox">
+				<label> <input type="checkbox"> Check me out
+				</label>
+			</div> -->
+		</form>
+						
+						</div>
+						<div class="modal-footer" style="height:90px">
+							<button type="submit" class="submit btn btn-primary" style="background-color:black;width:80px;height:50px;margin-top:10px"
+								data-dismiss="modal">Apply</button>
+							<button type="submit" class="submit btn btn-primary" style="background-color:black;width:80px;height:50px;margin-top:10px"
+								data-dismiss="modal">Reset</button>
+							<button type="submit" class="submit btn btn-primary" style="background-color:black;width:80px;height:50px;margin-top:10px"
+								data-dismiss="modal">cancel</button>
+						</div>
+					</div>
+
+				</div>
+			</div>
+      </div>
+    </div>
+</body>
+</html>
