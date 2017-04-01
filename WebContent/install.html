@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>易鲸捷数据库安装</title>
+<link href="lib/css/jquery.dataTables.min.css" rel="stylesheet">
+<link href="lib/css/bootstrap.css" rel="stylesheet">
+
+<script src="lib/js/jquery.min.js"></script>
+<script src="lib/js/jquery.dataTables.min.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/InstallView.js"></script>
+
+<link href="lib/images/sort_asc.png" rel="stylesheet">
+<link href="lib/images/sort_both.png" rel="stylesheet">
+<link href="css/navbar.css" rel="stylesheet">
+</head>
+
+<body>
+	<div class="navbar-wrapper">
+	        <nav class="navbar navbar-inverse navbar-static-top ">
+	          <div class="container">
+	            <div class="navbar-header">
+	              <a class="navbar-brand" href="#">易鲸捷数据库安装</a>
+	            </div>
+	            <div id="navbar" class="navbar-collapse collapse">
+	              <ul class="nav navbar-nav">
+	                <li><a href="index.html">配置</a></li>
+	                <li><a href="install.html">安装</a></li>
+	                <li><a href="#contact">进度</a></li>
+	                <li><a href="#contact">日志</a></li>
+	              </ul>
+	            </div>
+	          </div>
+	        </nav>
+	    <div class="container">
+			<div class="btn-group  pull-left" style="margin-bottom: 20px">
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#installDialog">新建</button>
+			</div>
+			<table id="installTable" class="table table-hover" width="100%"></table>
+	        
+			<div id="installDialog" class="modal fade " role="dialog" style="margin-right: 150px" >
+					<div class="modal-dialog">
+							<!-- Modal content-->
+						<div class="modal-content"  style="width:900px;" >
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<h4 class="modal-title">Confiuration Detail</h4>
+							</div>
+							<div class="modal-body">
+									<form class="form-horizontal" id="form">
+									<div class="form-group">
+									<label for="exampleInputEmail1" class="col-sm-2 control-label"
+											style="padding-left: 0px;padding-right:0px">选择安装配置</label>
+									<div class="col-sm-4">
+										    <select id="selectConfig" name="selectConfig" class="form-control	">
+											</select>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1" class="col-sm-2 control-label"
+											style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
+										<div class="col-sm-4">
+											<input type="email" class="form-control" id="exampleInputEmail1"
+												placeholder="license file2 ">
+										</div>
+										<label for="exampleInputEmail1" class="col-sm-2 control-label"
+											style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
+										<div class="col-sm-4">
+											<input type="email" class="form-control" id="exampleInputEmail1"
+												placeholder="license file2 ">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="exampleInputEmail1" class="col-sm-2 control-label"
+											style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
+										<div class="col-sm-4">
+											<input type="email" class="form-control" id="exampleInputEmail1"
+												placeholder="license file2 ">
+										</div>
+										<label for="exampleInputEmail1" class="col-sm-2 control-label"
+											style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
+										<div class="col-sm-4">
+											<input type="email" class="form-control" id="exampleInputEmail1"
+												placeholder="license file2 ">
+										</div>
+									</div>
+								</form>			
+							</div>
+							<div class="modal-footer" style="height:90px">
+							<input id="installApplyButton" class="submit btn btn-success"
+							type="submit" value="Apply">
+							<input id="installResetButton" class="submit btn btn-primary"
+							type="submit" value="Reset">
+							<button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+							</div>
+						</div>
+					</div>
+				</div>
+	    </div>
+    </div>
+</body>
+</html>
