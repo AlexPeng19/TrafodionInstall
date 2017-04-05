@@ -19,6 +19,8 @@ public class WriteUtil {
 
 	
 	public static void flushStr(HttpServletResponse response, Object resultList) {
+		response.setCharacterEncoding("utf-8");
+		response.setContentType("text/html; charset=utf-8");
 		PrintWriter writer = null;
 		String outStr = null;
 		JsonConfig jsonConfig = new JsonConfig();

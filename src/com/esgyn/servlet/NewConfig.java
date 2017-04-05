@@ -2,11 +2,12 @@ package com.esgyn.servlet;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.sql.Time;
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
-import java.util.UUID;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -26,13 +27,11 @@ public class NewConfig extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 Properties props = new Properties();  
 		 SimpleDateFormat format =new SimpleDateFormat("yy-MM-dd HH:mm:ss");
-		 
-				 
 		 RspMsg rsp =new RspMsg();
 		 Map<String,String> map =WriteUtil.getParamMap(request);
-		 
-		 String fileName = UUID.randomUUID().toString()+".properties";
+		 String fileName = map.get("configureFileName")+".properties";
 		 try {  
+			 changeValue(map,"traf_start","dcs_ha","offline_mode","ldap_security");
 	         for (String key : map.keySet()) {
 	        	 props.setProperty(key, map.get(key));
 	        }
@@ -53,4 +52,15 @@ public class NewConfig extends HttpServlet {
 		doGet(request, response);
 	}
 
+	//change dcs_ha offline_mode ldap_security traf_start to Y/N
+	public  static Map<String,String> changeValue(Map<String,String> map ,String ...args){
+		for (String string : args) {
+			if(map.containsKey(string)&&"on".equals(map.get(string))){
+         		map.put(string, "Y");
+         	}else{
+         		map.put(string, "N");
+         	}
+		}
+		return map;
+	}
 }

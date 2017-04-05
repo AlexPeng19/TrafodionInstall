@@ -50,19 +50,20 @@
 							<button type="button" class="close" data-dismiss="modal">&times;</button>
 							<h4 class="modal-title">Confiuration Detail</h4>
 						</div>
-						<form class="form-horizontal form" id="configForm">
+						<form class="form form-horizontal" id="configForm">
 							<div class="modal-body">
-							  <ul class="nav nav-tabs" role="tablist">
-							    <li role="presentation" class="active"><a href="#default" aria-controls="home" role="tab" data-toggle="tab">default setting</a></li>
-							    <li role="presentation"><a href="#DCSHA" aria-controls="profile" role="tab" data-toggle="tab">DCS HA setting</a></li>
-							    <li role="presentation"><a href="#offlineInstall" aria-controls="messages" role="tab" data-toggle="tab">offline install setting</a></li>
-							    <li role="presentation"><a href="#LDAP" aria-controls="settings" role="tab" data-toggle="tab">LDAP setting</a></li>
-							    <li role="presentation"><a href="#kerberos" aria-controls="settings" role="tab" data-toggle="tab">kerberos setting</a></li>
-							  </ul>
-									<div class="tab-content">
+										<div style="border-bottom:3 double green;height:30px; font-size: 18px">default setting</div>
 									    <div role="tabpanel" class="tab-pane active" id="default" style="padding-top: 20px;">
 										    <div class="traf-box">
 										   		<div class="traf-boxA">
+												    	<div class="form-group">
+																<label for="licenseFile" class="col-sm-4 control-label"
+																	style="padding-left: 0px;padding-right:0px">configure fileName</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" id="configureFileName" name ="configureFileName" required="required"
+																		placeholder="configure File Name">
+																</div>
+														</div>
 												    	<div class="form-group">
 																<label for="licenseFile" class="col-sm-4 control-label"
 																	style="padding-left: 0px;padding-right:0px">license file</label>
@@ -172,14 +173,14 @@
 														<div class="form-group">
 																<label for="traf_start" class="col-sm-4 control-label"
 																	style="padding-left: 0px;padding-right:0px">traf_start</label>
-																<div class="switch col-sm-8" onText="Y">
+																<div class="switch col-sm-8">
 																    <input type="checkbox" checked name ="traf_start" id ="traf_start"/>
 																</div>
 														</div>
 												</div>
 										   </div>
-									   </div>
-									    <div role="tabpanel" class="tab-pane" id="DCSHA"  style="padding-top: 20px;">
+									 	<hr />
+									    <div style="border-bottom:3 double green;height:30px; font-size: 18px">DCS HA setting</div>
 									    	<div class="traf-box">
 									    		<div class="traf-boxA">
 											    	<div class="form-group">
@@ -189,36 +190,36 @@
 																    <input type="checkbox"  name ="dcs_ha" id ="dcs_ha"/>
 															</div>
 													</div>
-													<div class="form-group">
-															<label for="dcs_floating_ip" class="col-sm-4 control-label"
-																style="padding-left: 0px;padding-right:0px">dcs_floating_ip</label>
+													<div class="form-group" id="dcsDisplay1" style="display: none">
+																<label for="dcs_floating_ip" class="col-sm-4 control-label"
+																	style="padding-left: 0px;padding-right:0px">dcs_floating_ip</label>
+																<div class="col-sm-8">
+																	<input type="text" class="form-control" id="dcs_floating_ip" name="dcs_floating_ip"
+																		placeholder="dcs_floating_ip">
+																</div>
+														</div>
+												</div>
+													<div class="traf-boxB" id="dcsDisplay2" style="display: none">
+														<div class="form-group">
+															<label for="dcs_interface" class="col-sm-4 control-label"
+																style="padding-left: 0px;padding-right:0px">dcs_interface</label>
 															<div class="col-sm-8">
-																<input type="text" class="form-control" id="dcs_floating_ip" name="dcs_floating_ip" required="required"
-																	placeholder="dcs_floating_ip">
+																<input type="text" class="form-control" id="dcs_interface" name="dcs_interface"
+																	placeholder="dcs_interface">
 															</div>
-													</div>
-												</div>
-												<div class="traf-boxB">
-													<div class="form-group">
-														<label for="dcs_interface" class="col-sm-4 control-label"
-															style="padding-left: 0px;padding-right:0px">dcs_interface</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="dcs_interface" name="dcs_interface"
-																placeholder="dcs_interface">
 														</div>
-													</div>
-													<div class="form-group">
-														<label for="dcs_backup_nodes" class="col-sm-4 control-label"
-															style="padding-left: 0px;padding-right:0px">dcs_backup_nodes</label>
-														<div class="col-sm-8">
-															<input type="text" class="form-control" id="dcs_backup_nodes" name="dcs_backup_nodes"
-																placeholder="dcs_backup_nodes">
+														<div class="form-group">
+															<label for="dcs_backup_nodes" class="col-sm-4 control-label"
+																style="padding-left: 0px;padding-right:0px">dcs_backup_nodes</label>
+															<div class="col-sm-8">
+																<input type="text" class="form-control" id="dcs_backup_nodes" name="dcs_backup_nodes"
+																	placeholder="dcs_backup_nodes">
+															</div>
 														</div>
 													</div>
 												</div>
-											</div>
-									    </div>
-									    <div role="tabpanel" class="tab-pane" id="offlineInstall"  style="padding-top: 20px;">
+										<hr />
+										<div style="border-bottom:3 double green;height:30px; font-size: 18px">offline install setting</div>
 									    	<div class="traf-box">
 									    		<div class="traf-boxA">
 											    	<div class="form-group">
@@ -230,7 +231,7 @@
 													</div>
 													
 												</div>
-												<div class="traf-boxB">
+												<div class="traf-boxB" id="installDisplay" style="display: none">
 													<div class="form-group">
 															<label for="local_repo_dir" class="col-sm-4 control-label"
 																style="padding-left: 0px;padding-right:0px">local_repo_dir</label>
@@ -241,8 +242,8 @@
 													</div>
 												</div>
 											</div>
-									    </div>
-									    <div role="tabpanel" class="tab-pane" id="LDAP" style="padding-top: 20px;">
+									  	<hr />
+										<div style="border-bottom:3 double green;height:30px; font-size: 18px">LDAP setting</div>
 										    <div class="traf-box">
 										    	<div class="traf-boxA">
 													<div class="form-group">
@@ -252,6 +253,7 @@
 																    <input type="checkbox"  name ="ldap_security" id ="ldap_security"/>
 															</div>
 													</div>
+													<div id="ldapDisplay1" style="display: none">
 													<div class="form-group">
 															<label for="db_admin_user" class="col-sm-4 control-label"
 																style="padding-left: 0px;padding-right:0px">db_admin_user</label>
@@ -293,7 +295,8 @@
 															</div>
 													</div>
 										    	</div>
-										    	<div class="traf-boxB">
+										    	</div>
+										    	<div class="traf-boxB" id="ldapDisplay2" style="display: none">
 										    		<div class="form-group">
 															<label for="ldap_identifiers" class="col-sm-4 control-label"
 																style="padding-left: 0px;padding-right:0px">ldap_identifiers</label>
@@ -312,6 +315,8 @@
 													    		<option value="1">1</option>
 													    		<option value="2">2</option>
 															</select>
+														<!-- 	<input type="text" class="form-control" id="ldap_encrypt" name="ldap_encrypt"
+																	placeholder="ldap_identifiers"> -->
 														</div>
 													</div>
 										    		<div class="form-group">
@@ -340,8 +345,8 @@
 													</div>
 												</div>
 									    	</div>
-									    </div>
-										<div role="tabpanel" class="tab-pane" id="kerberos"  style="padding-top: 20px;">
+									 	 <hr />
+										<div style="border-bottom:3 double green;height:30px; font-size: 18px">kerberos setting</div>
 											<div class="traf-box">
 												<div class="traf-boxA">
 													<div class="form-group">
@@ -372,7 +377,7 @@
 													</div>
 												</div>
 											</div>
-										</div>
+										<!-- </div> -->
 									</div>
 								</div>
 								<div class="modal-footer" style="height:90px">
