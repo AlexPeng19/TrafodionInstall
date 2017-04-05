@@ -2,6 +2,8 @@ package com.esgyn.servlet;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Properties;
 import java.util.UUID;
@@ -23,14 +25,20 @@ public class NewConfig extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		 Properties props = new Properties();  
+		 SimpleDateFormat format =new SimpleDateFormat("yy-MM-dd HH:mm:ss");
+		 
+				 
 		 RspMsg rsp =new RspMsg();
 		 Map<String,String> map =WriteUtil.getParamMap(request);
+		 
 		 String fileName = UUID.randomUUID().toString()+".properties";
 		 try {  
 	         for (String key : map.keySet()) {
 	        	 props.setProperty(key, map.get(key));
 	        }
+	         	props.put("createTime",format.format(new Date()));
 	            FileOutputStream oFile = new FileOutputStream(request.getRealPath("configer")+ "\\"+fileName, true);//true表示追加打开
+	            System.out.println(request.getRealPath("configer")+ "\\"+fileName);
 	            props.store(oFile, "The New properties file");
 	            oFile.close();
 	            rsp.setErrCode("200");

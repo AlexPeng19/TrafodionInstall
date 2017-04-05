@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.esgyn.util.ConfigBean;
 import com.esgyn.util.WriteUtil;
 
 public class QueryConfig extends HttpServlet {
@@ -27,23 +26,22 @@ public class QueryConfig extends HttpServlet {
 
     
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		List<ConfigBean> list =new ArrayList<ConfigBean>();
+		List<Properties> list =new ArrayList<Properties>();
 		String path =request.getRealPath("configer");
-				System.out.println(path);
+		
 				File file = new File(path);	
 				InputStream in = null;
 				String absolutepath =null;
                 String[] filelist = file.list();
                 if(file.list().length>0){
 	                for (int i = 0; i < filelist.length; i++) {
-	                	ConfigBean configBean =new ConfigBean();
+	                	Properties prop = new Properties();
 	                    File readfile = new File(path + "\\" + filelist[i]);
 	                    absolutepath = readfile.getAbsolutePath();
-	                    configBean.setFileName(readfile.getName());
+	                    prop.setProperty("fileName",readfile.getName());
 	                    in = new FileInputStream(absolutepath);
-	                    Properties prop = new Properties();
 	                    prop.load(in);
-	                    list.add(configBean);
+	                    list.add(prop);
 	                }
                 }
                 

@@ -10,8 +10,6 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.catalina.connector.Request;
-
 import net.sf.json.JSONArray;
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
@@ -37,7 +35,6 @@ public class WriteUtil {
 				JSONObject json = JSONObject.fromObject(resultList, jsonConfig);
 				outStr = json.toString();
 			}
-			System.out.println(outStr);
 			writer =response.getWriter();
 			writer.print(outStr);
 			System.out.println(outStr);
